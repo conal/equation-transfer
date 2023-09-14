@@ -39,8 +39,7 @@ open import Function.Base using (_on_; _∘_)
 
 module _
   {a₂ ℓ₂} (S₂ : Setoid a₂ ℓ₂) (let open Setoid S₂ renaming (Carrier to A₂; _≈_ to _≈₂_))
-          {_∙₂_ : Op₂ A₂} {ε₂ : A₂}
-          (∙₂-cong : Congruent₂ _≈₂_ _∙₂_)
+          {_∙₂_ : Op₂ A₂} {ε₂ : A₂} (∙₂-cong : Congruent₂ _≈₂_ _∙₂_)
   {a₁   } {A₁ : Set a₁} {_∙₁_ : Op₂ A₁} {ε₁ : A₁} {h : A₁ → A₂}
   (let infix 4 _≈₁_; _≈₁_ = _≈₂_ on h)
   (let open MD A₁ A₂ _≈₂_)
@@ -82,3 +81,5 @@ module _
 
   -- The environments can be inferred in reduce and transfer, so consider
   -- implicit ρ in _∼_, reduce, and transfer.
+
+  -- TODO: Try refactoring using RawMonoid.
